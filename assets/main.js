@@ -21,3 +21,15 @@ const randomNumber = generateRandom()
 
 
 
+function showInput() {
+
+  setTimeout(() => {
+    for (let i = 0; i < inputEl.length; i++) {
+      inputEl[i].classList.remove('d-none')
+    }
+  }, 3000);
+
+}
+
+const input = showInput()
+
