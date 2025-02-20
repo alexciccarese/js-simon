@@ -33,3 +33,27 @@ function showInput() {
 
 const input = showInput()
 
+
+
+// check numbers
+function checkNumber() {
+let correctNumber = true
+
+
+ for (let i = 0; i < inputEl.length; i++) {
+  if (inputEl[i] !== randomNumber) {
+    correctNumber = false
+  }
+ }
+
+ if (correctNumber) {
+  alert('I numeri sono corretti')
+
+ } else {
+  alert('Alcuni numeri sono sbagliati')
+ }
+
+}
+
+
+buttonEl.addEventListener('click', checkNumber)
