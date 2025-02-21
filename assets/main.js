@@ -3,9 +3,12 @@ const inputEl = document.querySelectorAll('.input-numb')
 const buttonEl = document.querySelector('.btn')
 
 function generateRandom() {
+const randomNumbers = []
+
   for (let i = 0; i < randomEl.length; i++) {
     const randomNumber = Math.floor(Math.random() * 100) + 1
     randomEl[i].innerText = randomNumber
+    randomNumbers.push(randomNumber)
   }
   
   setTimeout (() => {
@@ -14,10 +17,12 @@ function generateRandom() {
       randomEl[i].style.display = 'none'
     }
   }, 3000);
+
+  return randomNumbers
 }
 
 
-const randomNumber = generateRandom()
+let randomNumbers = generateRandom()
 
 
 
@@ -31,7 +36,7 @@ function showInput() {
 
 }
 
-const input = showInput()
+showInput()
 
 
 
@@ -41,8 +46,10 @@ let correctNumber = true
 
 
  for (let i = 0; i < inputEl.length; i++) {
-  if (inputEl[i] !== randomNumber) {
+  const inputValue = parseInt(inputEl[i].value)
+  if (inputValue !== randomNumbers[i]) {
     correctNumber = false
+    break
   }
  }
 
